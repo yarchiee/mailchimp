@@ -1,11 +1,10 @@
-export default function InputField() {
+export default function InputField({ inputText, setInputText }) {
   return (
     <>
       <input
-
-      // onChange={(e) => {
-      //   setSearchLabelInputText(e.target.value);
-      // }}
+        onChange={(e) => {
+          setInputText(e.target.value);
+        }}
       />
     </>
   );

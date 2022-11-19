@@ -25,6 +25,7 @@ export default MailchimpFormContainer;
 
 const CustomForm = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState("");
+  const [inputText, setInputText] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     email &&
@@ -45,9 +46,17 @@ const CustomForm = ({ status, message, onValidated }) => {
           value={email}
           placeholder="your@email.com"
           isRequired
+          inputText={inputText}
+          setInputText={setInputText}
         />
       </div>
-      <InputField label="subscribe" type="submit" formValues={[email]} />
+      <InputField
+        label="subscribe"
+        type="submit"
+        formValues={[email]}
+        inputText={inputText}
+        setInputText={setInputText}
+      />
     </form>
   );
 };
